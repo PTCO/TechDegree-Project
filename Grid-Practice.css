@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f1f1f1;
+}
+nav {
+  height: 4rem;
+  width: 100%;
+  border-bottom: 0.25rem white solid;
+  background: gray;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+}
+main {
+  background: #f1f1f1;
+  width: auto;
+  margin-left: 4rem;
+  height: 100vh;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  grid-template-rows: 20% 50% 30%;
+  grid-template-areas:
+    "profile User User"
+    "Description Gallery Gallery"
+    "Description Gallery Gallery";
+}
+
+nav h1 {
+  color: lawngreen;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+div {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  background: red;
+  background-image: url("Images/Menu.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+aside {
+  background: #111;
+  width: 7.3vw;
+  padding: 1rem 0.5vw;
+  position: fixed;
+  height: -webkit-fill-available;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 90;
+}
+
+footer {
+  height: 4rem;
+  width: 100%;
+  border-top: 0.25rem white solid;
+  background: rgb(63, 61, 61);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+}
+
+footer h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  border-right: 0.25rem white solid;
+  color: lawngreen;
+}
+
+aside h2 {
+  margin-top: 3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: lawngreen;
+  margin-bottom: 2rem;
+  border-bottom: 0.15rem white solid;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+aside ul {
+  overflow: hidden;
+  list-style: none;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+aside ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+aside ul li {
+  line-height: 3rem;
+}
+
+/*-----------------------------------------------------------------------*/
+.Round {
+  background: grey;
+  width: 9vw;
+  height: 9vw;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+  grid-area: profile;
+}
+
+.Banner {
+  background: grey;
+  width: 9vw;
+  height: 57vh;
+  justify-self: center;
+  grid-area: Description;
+}
+
+.Title {
+  align-self: center;
+  grid-area: User;
+  font-size: 2.5vw;
+}
+
+.Gallery {
+  background: grey;
+  width: 60vw;
+  height: 57vh;
+  grid-area: Gallery;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+@media (max-width: 500px) {
+  .Title {
+    font-size: 4vw;
+  }
+  .Round {
+    width: 14vw;
+    height: 8vh;
+    margin-right: 1rem;
+  }
+  main {
+    grid-template-areas:
+      "profile User User"
+      ". Description ."
+      ". Gallery .";
+    margin-left: 5rem;
+  }
+  .Banner {
+    width: 70vw;
+    height: 4vh;
+  }
+  .Gallery {
+    width: 66vw;
+    height: 48vh;
+    justify-self: center;
+    position: relative;
+    bottom: 15.5rem;
+  }
+  aside {
+    width: 13vw;
+    top: 0;
+  }
+  nav {
+    height: 7vh;
+  }
+  div {
+    width: 14vw;
+    height: 7vh;
+  }
+  footer {
+    height: 7vh;
+  }
+}
+@media (min-width: 1024px) and (max-height: 1366px) {
+  aside {
+    width: 5.25vw;
+  }
+  .Gallery {
+    bottom: 50vh;
+  }
+}
+@media (min-height: 700px) {
+  .Gallery {
+    bottom: 40vh;
+  }
+}
+@media (min-width: 700px) and (max-width: 1024) {
+  aside {
+    width: 5.25vw;
+  }
+}

@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Grid {
+  /*Turns the container into a grid*/
+  display: grid;
+  /*Creats grid columns, that can use diff units*/
+  grid-template-columns: 1fr 500x 500px 2fr;
+  /*Creats grid rows, that can use diff units*/
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  /*Assings the position or order of  the grid area named elements */
+  /*So element .Title will span from first to last column and be first
+  or at the top */
+  grid-template-areas:
+    ". Title Title ."
+    ".Header Header."
+    /*Element .Sidebar will set next to .Content element*/
+    ".Sidebar Content."
+    /*The . in the  ".Element." create a dead space
+    so there is empty space on both sides of element .Footer in this case*/
+    ".Footer Footer.";
+}
+.Grid div:nth-child(even) {
+  background: red;
+}
+.Grid div:nth-child(odd) {
+  background: blue;
+}
+
+.Title {
+  /*Assigns a grid area name to an element */
+  grid-area: Title;
+}
+.Header {
+  grid-area: Header;
+}
+.Sidebar {
+  grid-area: Sidebar;
+}
+.Content {
+  grid-area: Content;
+}
+.Footer {
+  grid-area: Footer;
+}
